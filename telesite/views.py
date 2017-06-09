@@ -1,18 +1,15 @@
 from django.shortcuts import render
 from .forms import AddPaymentForm
+from .models import *
 from django.http import HttpResponse
 
 
 def index(request):
-    var_hello = 'Hello'
-    var_world = 'World'
+    query_result = payment_category.objects.all()
     AddPaymentHTMLForm = AddPaymentForm(request.POST or None)
     if request.method == "POST":
-        print(request.POST)
-        data_form = AddPaymentHTMLForm.save(commit=False)
-        data_form.save()
+        if AddPaymentHTMLForm.is_valid():
+            print(request.POST)
+            data_form = AddPaymentHTMLForm.save()
+            data_form.save()
     return render(request, 'telesite/landing.html', locals())
-
-
-def help1(request):
-    return HttpResponse("Hello u r at help page")

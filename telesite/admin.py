@@ -10,5 +10,13 @@ class paymentsAdmin(admin.ModelAdmin):
     class Meta:
         model = payment
 
+class payment_categoryAdmin(admin.ModelAdmin):
+    list_display = ["id","cat_name", "cat_fullname","cat_createtime"]
+    search_fields = ["cat_name","cat_fullname"]
+    list_filter = ["cat_name","cat_fullname"]
+    class Meta:
+        model = payment_category
+
 
 admin.site.register(payment, paymentsAdmin)
+admin.site.register(payment_category,payment_categoryAdmin)
