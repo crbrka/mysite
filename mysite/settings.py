@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'telebot',
         'USER': 'telebot',
         'PASSWORD': 'telebot',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'HOST': 'tele.tuhvatull.in',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
