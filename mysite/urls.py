@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+admin.site.site_header = 'Ублюдская админка'
+
 urlpatterns = [
     url(r'^', include('telesite.urls')),
     url(r'^admin/', admin.site.urls),
