@@ -12,7 +12,7 @@ class payment_category(models.Model):
 
     class Meta:
         verbose_name = 'Категория'
-        verbose_name_plural = 'Катеригории'
+        verbose_name_plural = 'Категории'
 
 
 # Затраты
