@@ -11,4 +11,4 @@ def index(request):
             print(request.POST)
             data_form = AddPaymentHTMLForm.save()
             data_form.save()
-    return render(request, 'telesite/landing.html', locals())
+    return render(request, 'telesite/new_item.html', locals())

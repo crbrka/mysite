@@ -1,0 +1,47 @@
+{% extends "landing.html" %}
+{% load static %}
+
+
+{% block title %} Новая затрата {% endblock %}
+
+{% block content %}
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1 class="text-center fnt-roboto">Блядский домашний бюджет.</h1>
+                        <h2 class="text-center fnt-roboto">Не забывай вносить сюда свои расходы, сцуко!</h2>
+                        <div>
+                            <form action="" method="POST" class="form-horizontal">{% csrf_token %}
+                                <div class="form-group">
+                                    <select class="form-control  form-bold" name="{{ AddPaymentHTMLForm.pay_type.name }}">
+                                        <option value="1">Приход</option>
+                                        <option selected value="0">Расход</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control  form-bold" name="{{ AddPaymentHTMLForm.pay_category.name }}">
+                                        {%  for item in query_result %}
+                                        <option value="{{ item.id }}">{{ item.cat_fullname }}</option>>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-13">
+                                      <input class="form-control form-bold" type="text" name="{{ AddPaymentHTMLForm.pay_sum.name }}" value="Сумма в рубликах">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-13">
+                                      <input class="form-control  form-bold" type="text" name="{{ AddPaymentHTMLForm.pay_comment.name }}" value="Причина траты">
+                                    </div>
+                                  </div>
+                                   <div class="form-group">
+                                    <div class="col-sm-13">
+                                        <button class="btn btn-warning btn-lg btn-block" type="submit">Отправить</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}

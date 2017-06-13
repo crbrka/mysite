@@ -18,14 +18,12 @@ class payment_categoryAdmin(admin.ModelAdmin):
     class Meta:
         model = payment_category
 
-class MyAdminSite(AdminSite):
-    site_title = ugettext_lazy('My2 site admin')
-
-    # Text to put in each page's <h1> (and above login form).
-    site_header = ugettext_lazy('My 2administration')
-
-    # Text to put at the top of the admin index page.
-    index_title = ugettext_lazy('Site2 administration')
+class upper_menuAdmin(admin.ModelAdmin):
+    list_display = ["menu_name","menu_link"]
+    search_fields = ["menu_name"]
+    class Meta:
+        model = upper_menu
 
 admin.site.register(payment, paymentsAdmin)
 admin.site.register(payment_category,payment_categoryAdmin)
+admin.site.register(upper_menu,upper_menuAdmin)

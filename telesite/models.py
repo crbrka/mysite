@@ -13,6 +13,7 @@ class payment_category(models.Model):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
+      #  db_table = 'categories'
 
 
 # Затраты
@@ -30,3 +31,14 @@ class payment(models.Model):
         verbose_name = 'Операция'
         verbose_name_plural = 'Операции'
 
+#класс меню
+class upper_menu(models.Model):
+    menu_name = models.CharField(max_length=30)
+    menu_link = models.CharField(max_length=100)
+
+    def __str__(self):
+        return "%s - %s" % (self.menu_name,self.menu_link, )
+
+    class Meta:
+        verbose_name = 'Элемент Меню'
+        verbose_name_plural ='Элементы Меню'
