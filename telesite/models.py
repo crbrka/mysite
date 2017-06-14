@@ -13,7 +13,7 @@ class payment_category(models.Model):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
-      #  db_table = 'categories'
+        db_table = 'categories'
 
 
 # Затраты
@@ -30,6 +30,7 @@ class payment(models.Model):
     class Meta:
         verbose_name = 'Операция'
         verbose_name_plural = 'Операции'
+        db_table = 'payments'
 
 #класс меню
 class upper_menu(models.Model):
@@ -42,3 +43,4 @@ class upper_menu(models.Model):
     class Meta:
         verbose_name = 'Элемент Меню'
         verbose_name_plural ='Элементы Меню'
+        db_table = 'menu'

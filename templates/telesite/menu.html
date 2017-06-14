@@ -1,0 +1,7 @@
+    <div style="position: absolute; top: 10px; right: 20px; z-index: 20"> |
+        {% block menuEZ %} menuZ = upper_menu.objects.all()
+            {% for item in menuZ %}
+                <a class="text-capitalize text" href="{{ item.menu_link }}"> {{ item.menu_name }}</a> |
+            {% endfor %}
+        {% endblock %}
+    </div>
